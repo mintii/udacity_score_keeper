@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">TennisCounter</string>
+    <string name="label_A">A</string>
+    <string name="label_B">B</string>
+    <string name="scoreBoardText">0 0 0 0 0 0</string>
+    <string name="player_label_A">Player A</string>
+    <string name="player_label_B">Player B</string>
+    <string name="sets_label">Sets: </string>
+    <string name="games_label">Games: </string>
+    <string name="won_games_text">0</string>
+    <string name="won_sets_text">0</string>
+    <string name="player_point">0</string>
+    <string name="current_game">Current Game</string>
+    <string name="reset_match">RESET MATCH</string>
+</resources>

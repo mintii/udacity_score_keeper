@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    tools:context="com.brittneybraxton.android.tenniscounter.MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/scoreboard_wrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/playerA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_toLeftOf="@+id/player_B_scoreBoard"
+            android:layout_toStartOf="@+id/player_B_scoreBoard"
+            android:text="@string/label_A"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/player_A_scoreBoard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/scoreBoardText"
+            android:textSize="20sp" />
+
+        <View
+            android:layout_width="300dp"
+            android:layout_height="4dp"
+            android:layout_below="@id/playerA"
+            android:background="@android:color/darker_gray"
+            android:id="@+id/view" />
+
+        <TextView
+            android:id="@+id/playerB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/playerA"
+            android:layout_alignLeft="@+id/playerA"
+            android:layout_alignRight="@+id/playerA"
+            android:layout_alignStart="@+id/playerA"
+            android:layout_below="@+id/playerA"
+            android:text="@string/label_B"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/player_B_scoreBoard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view"
+            android:layout_centerHorizontal="true"
+            android:text="@string/scoreBoardText"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/scores"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scoreboard_wrapper"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="top"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_horizontal"
+                android:text="@string/player_label_A"
+                android:textColor="#616161"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+                <TextView
+                    android:id="@+id/player_A_won_sets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/sets_label" />
+
+                <TextView
+                    android:id="@+id/player_A_won_sets_int"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/player_A_won_sets"
+                    android:layout_toRightOf="@+id/player_A_won_games"
+                    android:text="@string/won_sets_text" />
+
+                <TextView
+                    android:id="@+id/player_A_won_games"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/player_A_won_sets"
+                    android:text="@string/games_label" />
+
+                <TextView
+                    android:id="@+id/player_A_won_games_int"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/player_A_won_games"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/player_A_won_games"
+                    android:text="@string/won_games_text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/player_A_won_games"
+                    android:text="@string/current_game" />
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/player_A_point"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="displayForPlayerA"
+                android:text="@string/player_point" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="top"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_horizontal"
+                android:text="@string/player_label_B"
+                android:textColor="#616161"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+                <TextView
+                    android:id="@+id/player_B_won_sets"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/sets_label" />
+
+                <TextView
+                    android:id="@+id/player_B_won_sets_int"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/player_B_won_sets"
+                    android:layout_toRightOf="@+id/player_B_won_games"
+                    android:text="@string/won_sets_text" />
+
+                <TextView
+                    android:id="@+id/player_B_won_games"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/player_B_won_sets"
+                    android:text="@string/games_label" />
+
+                <TextView
+                    android:id="@+id/player_B_won_games_int"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/player_B_won_games"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/player_B_won_games"
+                    android:text="@string/won_games_text" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/player_B_won_games"
+                    android:layout_marginEnd="11dp"
+                    android:layout_marginRight="11dp"
+                    android:text="@string/current_game" />
+            </RelativeLayout>
+
+
+            <Button
+                android:id="@+id/player_B_point"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:onClick="displayForPlayerB"
+                android:text="@string/player_point" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/resetMatch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="resetScores"
+        android:text="@string/reset_match" />
+
+</RelativeLayout>
